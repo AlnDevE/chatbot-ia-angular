@@ -95,8 +95,17 @@ h2{
 
 .init{
   height: 75%;
-  width: 90%;
+  width: 60%;
   flex-direction: column;
   overflow: hidden;
   color: white;
+
+  p{
+    text-align: center;
+  }
+}
+
+h5{
+  text-align: center;
+  font-family: math;
 }

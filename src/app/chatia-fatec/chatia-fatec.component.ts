@@ -27,13 +27,14 @@ export class ChatiaFatecComponent implements OnInit {
   sendQuestion(){
     this.afterInit = true;
     if(this.textInput){
-      this.listMessages.push({message: this.textInput, type: 'send'});
-      this.chatIaService.sendQuestion(this.textInput).pipe(
+      let textCopy = this.textInput;
+      this.textInput = '';
+      this.listMessages.push({message: textCopy, type: 'send'});
+      this.chatIaService.sendQuestion(textCopy).pipe(
         first()
       ).subscribe({
         next: (response: any) => {
           this.listMessages.push({message: response, type: 'receive'});
-
         },
         error: () => console.log('deu ruim')
       })

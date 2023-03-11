@@ -12,10 +12,10 @@
               {{last ? scrollToBottom() : ''}}
             </p>
           </div>
-          <img class="m-2" src="../../assets/perfil.png" width="20" height="20" alt="">
+          <img class="m-2" src="../../assets/perfil.png" width="20" height="20" alt="Imagem de perfil default">
         </div>
         <div *ngIf="i.type == 'receive'" class="receive d-flex mb-2">
-          <img class="m-2" src="../../assets/robo.png" width="20" height="20" alt="">
+          <img class="m-2" src="../../assets/robo.png" width="20" height="20" alt="Imagem de robô">
           <div class="mscont">
             {{i.message}}
             {{last ? scrollToBottom() : ''}}
@@ -25,14 +25,16 @@
     </div>
 
     <ng-template #onInit>
-      <div class="init mt-3 d-flex align-items-center justify-content-center">
-        <h4>Hello from ia</h4>
+      <div class="init mt-3 mb-5 d-flex align-items-center justify-content-center">
+        <img class="mb-4" src="../../assets/ia.png" width="100" height="100" alt="">
+        <h5>Chat bot com inteligência artificial com objetivo de tirar dúvidas referente a faculdade.</h5>
+        <p>Tente "Como faço minha matrícula?"</p>
       </div>
     </ng-template>
 
     <div class="line w-100"></div>
     <div class="ipt mt-3 mb-3">
-      <textarea class="bgd scroll" [(ngModel)]="textInput"></textarea>
+      <textarea class="bgd scroll" [(ngModel)]="textInput" (keyup.enter)="sendQuestion()"></textarea>
       <button class="btn" (click)="sendQuestion()">
         <img src="../../assets/send.png" width="20" height="20" alt="Botão de envio">
       </button>
