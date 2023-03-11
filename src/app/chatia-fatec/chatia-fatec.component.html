@@ -16,10 +16,10 @@
         </div>
         <div *ngIf="i.type == 'receive'" class="receive d-flex mb-2">
           <img class="m-2" src="../../assets/robo.png" width="20" height="20" alt="Imagem de robô">
-          <div class="mscont">
+          <p class="mscont">
             {{i.message}}
             {{last ? scrollToBottom() : ''}}
-          </div>
+          </p>
         </div>
       </div>
     </div>

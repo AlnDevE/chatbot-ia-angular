@@ -71,10 +71,6 @@ h2{
   background-color:  hsla(0, 0%, 80%, 0.05);
   padding: 5px;
   max-width: 49%;
-
-  p{
-    width: 100%;
-  }
 }
 
 ::-webkit-scrollbar {
@@ -108,4 +104,8 @@ h2{
 h5{
   text-align: center;
   font-family: math;
+}
+
+p{
+  word-break: break-all;
 }
