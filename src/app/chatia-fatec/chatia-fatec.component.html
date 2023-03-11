@@ -5,11 +5,12 @@
     <div class="msgs">
 
     </div>
-    <div class="line w-100">
-
-    </div>
+    <div class="line w-100"></div>
     <div class="ipt mt-3 mb-3">
-
+      <textarea class="bgd scroll" [(ngModel)]="textInput" (keypress)="sendQuestion()"></textarea>
+      <button class="btn" (click)="sendQuestion()">
+        <img src="../../assets/send.png" width="20" height="20" alt="Botão de envio">
+      </button>
     </div>
   </div>
 </div>

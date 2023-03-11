@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatiaFatecComponent implements OnInit {
 
+  textInput!: string;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  sendQuestion(){
+    console.log(this.textInput);
+  }
 }

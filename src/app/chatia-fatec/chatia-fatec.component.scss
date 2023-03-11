@@ -9,6 +9,7 @@
   height: 620px;
   background-color: hsla(0,0%,100%,.05);
   align-items: center;
+  border-radius: 10px;
 }
 
 .line{
@@ -29,4 +30,22 @@ h2{
   height: 9%;
   border-radius: 10px;
   background-color:  hsla(0, 0%, 80%, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  textarea{
+    color: white;
+    border-style: none;
+    border-color: Transparent;
+    outline: none;
+    resize: none;
+    width: 90%;
+    height: 60%;
+    background-color:  transparent;
+  }
+}
+
+.scroll::-webkit-scrollbar {
+  display: none;
 }
