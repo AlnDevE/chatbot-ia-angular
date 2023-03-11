@@ -1,3 +1,15 @@
 .ipt{
   background-color: hsla(0,0%,100%,.05);
 }
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  width: 50%;
+  height: 600px;
+  background-color: hsla(0,0%,100%,.05);
+}
