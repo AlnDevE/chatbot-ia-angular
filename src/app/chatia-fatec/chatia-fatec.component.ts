@@ -14,7 +14,7 @@ export class ChatiaFatecComponent implements OnInit {
   @ViewChild('content') content!: ElementRef;
 
   textInput!: string;
-
+  afterInit: boolean = false;
   listMessages: Message[] = []
 
   constructor(
@@ -25,6 +25,7 @@ export class ChatiaFatecComponent implements OnInit {
   }
 
   sendQuestion(){
+    this.afterInit = true;
     if(this.textInput){
       this.listMessages.push({message: this.textInput, type: 'send'});
       this.chatIaService.sendQuestion(this.textInput).pipe(
@@ -40,6 +41,8 @@ export class ChatiaFatecComponent implements OnInit {
   }
 
   scrollToBottom(){
-    this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
+    try{
+      this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
+    }catch(err){}
   }
 }

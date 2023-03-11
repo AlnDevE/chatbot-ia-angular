@@ -2,27 +2,34 @@
   <div class="card mt-4 d-flex flex-col">
     <h2 class="mt-3">FATEC</h2>
     <div class="line w-100 mt-1"></div>
-    <div #content class="msgs d-flex mt-4 mb-4 scrl">
-      <div #messages *ngFor="let i of listMessages; let last = last">
 
-        <div *ngIf="i.type == 'send'" class="send d-flex">
+    <div #content *ngIf="afterInit; else onInit" class="msgs d-flex mt-4 scrl">
+      <div *ngFor="let i of listMessages; let last = last">
+        <div *ngIf="i.type == 'send'" class="send d-flex mb-2">
           <div class="mscont">
             <p>
               {{i.message}}
               {{last ? scrollToBottom() : ''}}
             </p>
           </div>
+          <img class="m-2" src="../../assets/perfil.png" width="20" height="20" alt="">
         </div>
-        <div *ngIf="i.type == 'receive'" class="receive d-flex">
+        <div *ngIf="i.type == 'receive'" class="receive d-flex mb-2">
+          <img class="m-2" src="../../assets/robo.png" width="20" height="20" alt="">
           <div class="mscont">
             {{i.message}}
             {{last ? scrollToBottom() : ''}}
           </div>
         </div>
-
       </div>
-
     </div>
+
+    <ng-template #onInit>
+      <div class="init mt-3 d-flex align-items-center justify-content-center">
+        <h4>Hello from ia</h4>
+      </div>
+    </ng-template>
+
     <div class="line w-100"></div>
     <div class="ipt mt-3 mb-3">
       <textarea class="bgd scroll" [(ngModel)]="textInput"></textarea>
