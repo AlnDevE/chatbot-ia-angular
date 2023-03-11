@@ -2,14 +2,22 @@
   <div class="card mt-4 d-flex flex-col">
     <h2 class="mt-3">FATEC</h2>
     <div class="line w-100 mt-1"></div>
-    <div class="msgs d-flex mt-1">
-      <div *ngFor="let i of listMessages">
+    <div #content class="msgs d-flex mt-4 mb-4 scrl">
+      <div #messages *ngFor="let i of listMessages; let last = last">
 
         <div *ngIf="i.type == 'send'" class="send d-flex">
-          <p>{{i.message}}</p>
+          <div class="mscont">
+            <p>
+              {{i.message}}
+              {{last ? scrollToBottom() : ''}}
+            </p>
+          </div>
         </div>
         <div *ngIf="i.type == 'receive'" class="receive d-flex">
-          <p>{{i.message}}</p>
+          <div class="mscont">
+            {{i.message}}
+            {{last ? scrollToBottom() : ''}}
+          </div>
         </div>
 
       </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, ViewChild, ViewChildren } from '@angular/core';
 import { ChatiaService } from '../service/chatia.service';
 import { first } from 'rxjs';
 import { Message } from '../interface/message';
@@ -8,7 +8,10 @@ import { Message } from '../interface/message';
   templateUrl: './chatia-fatec.component.html',
   styleUrls: ['./chatia-fatec.component.scss']
 })
+
 export class ChatiaFatecComponent implements OnInit {
+
+  @ViewChild('content') content!: ElementRef;
 
   textInput!: string;
 
@@ -29,9 +32,14 @@ export class ChatiaFatecComponent implements OnInit {
       ).subscribe({
         next: (response: any) => {
           this.listMessages.push({message: response, type: 'receive'});
+
         },
         error: () => console.log('deu ruim')
       })
     }
+  }
+
+  scrollToBottom(){
+    this.content.nativeElement.scrollTop = this.content.nativeElement.scrollHeight;
   }
 }

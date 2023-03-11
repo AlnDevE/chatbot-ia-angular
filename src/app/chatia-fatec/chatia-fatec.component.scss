@@ -26,10 +26,8 @@ h2{
   width: 90%;
   flex-direction: column;
   overflow: hidden;
-
-  p{
-    color: white;
-  }
+  overflow-y: scroll;
+  color: white;
 }
 
 .ipt{
@@ -59,8 +57,34 @@ h2{
 
 .send{
   justify-content: right;
+  margin-right: 1rem;
 }
 
 .receive{
   justify-content: left;
+}
+
+.mscont{
+  display: flex;
+  justify-content: center;
+  height: auto;
+  border-radius: 5px;
+  background-color:  hsla(0, 0%, 80%, 0.05);
+  padding: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsla(0, 0%, 80%, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
