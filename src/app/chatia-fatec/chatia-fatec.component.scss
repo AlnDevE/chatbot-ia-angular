@@ -23,6 +23,13 @@ h2{
 
 .msgs{
   height: 75%;
+  width: 90%;
+  flex-direction: column;
+  overflow: hidden;
+
+  p{
+    color: white;
+  }
 }
 
 .ipt{
@@ -48,4 +55,12 @@ h2{
 
 .scroll::-webkit-scrollbar {
   display: none;
+}
+
+.send{
+  justify-content: right;
+}
+
+.receive{
+  justify-content: left;
 }
