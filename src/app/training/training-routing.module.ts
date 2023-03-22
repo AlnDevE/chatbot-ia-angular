@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { TrainingComponent } from './training.component';
 import { CreateTrainingComponent } from './create-training/create-training.component';
 import { ListTrainingComponent } from './list-training/list-training.component';
+import { InfoTrainingComponent } from './info-training/info-training.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,15 @@ const routes: Routes = [
     {
       path: 'list',
       component: ListTrainingComponent
+    },
+    {
+      path: 'info',
+      component: InfoTrainingComponent
+    },
+    {
+      path: '',
+      pathMatch: 'full',
+      redirectTo: 'info'
     }
   ]
   }
