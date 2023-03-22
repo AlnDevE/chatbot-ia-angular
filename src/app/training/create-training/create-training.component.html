@@ -1,15 +1,49 @@
+<div class="w-100 d-flex flex-row">
+  <div class="col-9 iptcont">
+    <div>
+      <h3 class="p-5">Adicionar nova pergunta</h3>
+    </div>
+    <div class="d-flex flex-column align-items-center">
+      <form class="col-9 mt-4">
 
-<div class="d-flex w-100 justify-content-end">
-  <div class="s-container col-3 d-flex align-items-center flex-column">
-    <h5 class="mt-5">Ajuda</h5>
-    <div class="hp w-100 mt-5 d-flex flex-column justify-content-start">
-      <p class="text-center">Para treinar a inteligência do chatbot preencha os campos usando as seguintes regras:</p>
-      <ul>
-        <li><strong>Tag: </strong>Palavra chave que define o tipo da pergunta. É permitido apenas uma tag por padrão.</li>
-        <li><strong>Padrões de perguntas: </strong>Padrões de perguntas que podem ser enviadas pelo usuário, podendo ser um ou mais padrões.</li>
-        <li><strong>Padrões de respostas: </strong>Padrões de respostas em que a IA irá retornar ao usuário, podendo ser um ou mais padrões.</li>
-      </ul>
+        <div class="col-4 p-2 d-flex align-items-center flex-column">
+          <div class="mb-2">TAG</div>
+          <input class="form-control" type="text" id="tag" placeholder="Digite uma tag">
+        </div>
+
+        <div class="form-group d-flex flex-row mt-3">
+
+          <div class="col-6 p-2 d-flex align-items-center flex-column">
+            <div class="mb-2">Padrão de pergunta</div>
+            <input class="form-control" type="text" placeholder="Digite um padrão de pergunta">
+          </div>
+
+          <div class="col-6 p-2 d-flex align-items-center flex-column">
+            <div class="mb-2">Padrão de resposta</div>
+            <input class="form-control" type="text" placeholder="Digite um padrão de resposta">
+          </div>
+
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="col-3">
+    <div class="s-container d-flex align-items-center flex-column">
+      <h5 class="mt-5">Ajuda</h5>
+      <div class="hp w-100 mt-5 d-flex flex-column justify-content-start">
+        <p class="text-center">Para treinar a inteligência do chatbot preencha os campos usando as seguintes regras:</p>
+        <ul>
+          <li><strong>Tag: </strong>Palavra chave que define o tipo da pergunta. É permitido apenas uma tag por padrão.</li>
+          <li><strong>Padrões de perguntas: </strong>Padrões de perguntas que podem ser enviadas pelo usuário, podendo ser um ou mais padrões.</li>
+          <li><strong>Padrões de respostas: </strong>Padrões de respostas em que a IA irá retornar ao usuário, podendo ser um ou mais padrões.</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
 
+<!--
+<div class="col-3 d-flex w-100 justify-content-end">
+
+</div> -->
