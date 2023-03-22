@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./chatia-fatec/chatia-fatec.module').then(m => m.ChatiaFatecModule)
   },
   {
-    path: 'chatia-fatec-training',
+    path: 'chatia-training',
     loadChildren: () => import('./training/training.module').then(m => m.TrainingModule)
   },
 ];

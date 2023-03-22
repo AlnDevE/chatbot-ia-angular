@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TrainingRoutingModule } from './training-routing.module';
 import { TrainingComponent } from './training.component';
+import { SidebarModule } from '../sidebar/sidebar.module';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { TrainingComponent } from './training.component';
   ],
   imports: [
     CommonModule,
-    TrainingRoutingModule
+    TrainingRoutingModule,
+    SidebarModule
   ]
 })
 export class TrainingModule { }
