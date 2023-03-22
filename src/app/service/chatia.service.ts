@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams} from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Training } from '../interface/training';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +15,9 @@ export class ChatiaService {
   sendQuestion(textInput: string){
     let params = new HttpParams().append('message', textInput);
     return this.httpClient.get(environment.apiUrl, {params: params});
+  }
+
+  postTraining(training: Training){
+    return this.httpClient.post(environment.apiUrl, training);
   }
 }
