@@ -1,27 +1,31 @@
-# ChatbotFatecFront
+# Chatbot Fatec com IA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+> Esse projeto foi desenvolvido utilizando angular. Para o funcionamento correto do projeto é necessário o download e a execução do projeto back-end que foi desenvolvido em python que tem como base IA para retornar as respostas;
 
-## Development server
+Link para download do projeto backend: https://github.com/AlnDevE/chatbot-ia
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## ⚙️ Funcionalidades
 
-## Code scaffolding
+- [x] Responde dúvidas referente a faculdade de tecnologia.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ⚙️ Funcionalidades Futuras
 
-## Build
+- [x] Interface para treinamento da IA. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 💻 Preview
 
-## Running unit tests
+<div style="display: flex; flex-direction:row;">
+    <img src="preview/inicial_screen.png" alt="Fatec" width="48%;"/>
+    <img src="preview/conversation.png" alt="Fatec" width="48%;"/>
+</div>
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 💻 Development server
 
-## Running end-to-end tests
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* Ter instalado o Node.
 
-## Further help
+Após isso, execute o comando "npm i" no diretório raiz para instalar as dependências do projeto. Navegue até http://localhost:4200/. O aplicativo será recarregado automaticamente se você alterar qualquer um dos arquivos de origem.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+[⬆ Voltar ao topo](#chatbot-ia-angular)<br>
