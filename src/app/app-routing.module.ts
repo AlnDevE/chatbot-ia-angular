@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'chatia-fatec',
     loadChildren: () => import('./chatia-fatec/chatia-fatec.module').then(m => m.ChatiaFatecModule)
   },
+  {
+    path: 'chatia-fatec-training',
+    loadChildren: () => import('./training/training.module').then(m => m.TrainingModule)
+  },
 ];
 
 @NgModule({
