@@ -1,14 +1,14 @@
-<div class="s-container col-2">
+<div class="s-container w-100">
   <div class="w-100 head d-flex align-items-center flex-column">
     <div class="mt-4 d-flex flex-row justify-content-around">
       <h3>Treinamento</h3>
       <img class="m-1" src="../../assets/ia.png" width="40" height="40" alt="">
     </div>
     <div class="line w-100 mt-3"></div>
-    <button class="btn mt-4 bt">
+    <button class="btn mt-4 bt" [routerLink]="['create']" [routerLinkActive]="'active'">
       CADASTRAR
     </button>
-    <button class="btn mt-4 bt">
+    <button class="btn mt-4 bt" [routerLink]="['list']" [routerLinkActive]="'active'">
       LISTAR
     </button>
   </div>
