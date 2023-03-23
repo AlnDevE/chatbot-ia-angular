@@ -16,7 +16,7 @@
           <div class="col-6 p-2 d-flex align-items-center flex-column">
             <div class="mb-2">Padrão de pergunta</div>
             <input (keydown.enter)="addOnList($event, 'question')" class="form-control" type="text" placeholder="Digite um padrão de pergunta">
-            <div class="mt-2 list w-100 d-flex flex-column">
+            <div class="list w-100 d-flex flex-column">
               <div *ngFor="let item of listQuestions">
                 <p>{{item}}</p>
               </div>
@@ -27,7 +27,7 @@
           <div class="col-6 p-2 d-flex align-items-center flex-column">
             <div class="mb-2">Padrão de resposta</div>
             <input  (keydown.enter)="addOnList($event, 'response')" class="form-control" type="text" placeholder="Digite um padrão de resposta">
-            <div class="mt-2 list w-100 d-flex flex-column">
+            <div class="list w-100 d-flex flex-column">
               <p *ngFor="let item of listResponses">{{item}}</p>
             </div>
           </div>

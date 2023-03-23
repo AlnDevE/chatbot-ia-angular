@@ -22,6 +22,7 @@ li{
   max-height: 35vh;
   overflow: hidden;
   overflow-y: scroll;
+  word-break:break-all;
 }
 
 .iptcont{
@@ -47,4 +48,8 @@ li{
 .line{
   height: 1px;
   border: solid 1px white;
+}
+
+p{
+  padding: 15px;
 }
