@@ -16,7 +16,7 @@
 
           <div class="col-6 p-2 d-flex align-items-center flex-column">
             <div class="mb-2">Padrão de pergunta</div>
-            <input (keydown.enter)="addOnList($event, 'question')" class="form-control" type="text" placeholder="Digite um padrão de pergunta">
+            <input #qInpt (keydown.enter)="addOnList($event, 'question')" class="form-control" type="text" placeholder="Digite um padrão de pergunta">
             <div class="list w-100 d-flex flex-column">
               <div *ngFor="let item of patterns?.value">
                 <p>{{item}}</p>
@@ -27,7 +27,7 @@
 
           <div class="col-6 p-2 d-flex align-items-center flex-column">
             <div class="mb-2">Padrão de resposta</div>
-            <input  (keydown.enter)="addOnList($event, 'response')" class="form-control" type="text" placeholder="Digite um padrão de resposta">
+            <input #rInpt (keydown.enter)="addOnList($event, 'response')" class="form-control" type="text" placeholder="Digite um padrão de resposta">
             <div class="list w-100 d-flex flex-column">
               <p *ngFor="let item of responses?.value">{{item}}</p>
             </div>
@@ -41,13 +41,14 @@
   <div class="col-3">
     <div class="s-container d-flex align-items-center flex-column">
       <h5 class="mt-5">Ajuda</h5>
-      <div class="hp w-100 mt-5 d-flex flex-column justify-content-start">
+      <div class="w-100 mt-5 d-flex flex-column justify-content-start">
         <p class="text-center">Para treinar a inteligência do chatbot preencha os campos usando as seguintes regras:</p>
         <ul>
           <li><strong>Tag: </strong>Palavra chave que define o tipo da pergunta. É permitido apenas uma tag por padrão.</li>
           <li><strong>Padrões de perguntas: </strong>Padrões de perguntas que podem ser enviadas pelo usuário, podendo ser um ou mais padrões.</li>
           <li><strong>Padrões de respostas: </strong>Padrões de respostas em que a IA irá retornar ao usuário, podendo ser um ou mais padrões.</li>
         </ul>
+        <!-- <p-messages class="msg" [closable]="false" [(value)]="msgs"></p-messages> -->
       </div>
     </div>
   </div>

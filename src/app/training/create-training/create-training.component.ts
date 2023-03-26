@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Message } from 'primeng/api';
 import { first } from 'rxjs';
 import { ChatiaService } from 'src/app/service/chatia.service';
 
@@ -18,6 +19,7 @@ export class CreateTrainingComponent implements OnInit {
   form!: FormGroup;
   listQuestions: any[] = [];
   listResponses: any[] = [];
+  msgs: Message[] = [];
 
   constructor(
     private trainService: ChatiaService,
@@ -38,16 +40,21 @@ export class CreateTrainingComponent implements OnInit {
     }
     this.form.get('patterns')?.setValue(this.listQuestions);
     this.form.get('responses')?.setValue(this.listResponses);
+    this.clearInputs();
   }
 
   onSend(){
     if(this.form.valid){
+      this.showInfo();
       this.trainService.postTraining(this.form.value).pipe(
         first()
       ).subscribe({
         next: () => {
-          console.log('deu bom');
+          this.showSuccess();
           this.form.reset();
+        },
+        error: () => {
+          this.showError();
         }
       })
     }
@@ -64,5 +71,24 @@ export class CreateTrainingComponent implements OnInit {
   clearInputs(){
     this.questionsInput.nativeElement.value = '';
     this.responsesInput.nativeElement.value = '';
+  }
+
+  showSuccess(){
+    this.clearMsgs();
+    this.msgs = [{ severity: 'success', summary: 'Successo', detail: 'Novo treinamento incluído!', life: 5000 }];
+  }
+
+  showInfo(){
+    this.clearMsgs();
+    this.msgs = [{ severity: 'info', summary: 'Treinando', detail: 'IA em treinamento', life: 20000 }];
+  }
+
+  showError(){
+    this.clearMsgs();
+    this.msgs = [{ severity: 'error', summary: 'Erro', detail: 'Erro ao enviar treinamento' }];
+  }
+
+  clearMsgs(){
+    this.msgs = [];
   }
 }
