@@ -1,14 +1,15 @@
 <div class="w-100 d-flex flex-row">
   <div class="col-9 iptcont">
-    <div>
+    <div class="w-100 d-flex flex-row justify-content-between">
       <h3 class="p-5">Adicionar nova pergunta</h3>
+      <button type="submit" (click)="onSend()" class="m-5 btn btn-primary" [disabled]="form.invalid">Enviar</button>
     </div>
     <div class="d-flex flex-column align-items-center">
-      <form class="col-9 mt-4">
+      <form class="col-9 mt-4" [formGroup]="form">
 
         <div class="col-4 p-2 d-flex align-items-center flex-column">
           <div class="mb-2">TAG</div>
-          <input class="form-control" type="text" id="tag" placeholder="Digite uma tag">
+          <input formControlName="tag" class="form-control" type="text" id="tag" placeholder="Digite uma tag">
         </div>
 
         <div class="form-group d-flex flex-row mt-3">
@@ -17,7 +18,7 @@
             <div class="mb-2">Padrão de pergunta</div>
             <input (keydown.enter)="addOnList($event, 'question')" class="form-control" type="text" placeholder="Digite um padrão de pergunta">
             <div class="list w-100 d-flex flex-column">
-              <div *ngFor="let item of listQuestions">
+              <div *ngFor="let item of patterns?.value">
                 <p>{{item}}</p>
               </div>
             </div>
@@ -28,7 +29,7 @@
             <div class="mb-2">Padrão de resposta</div>
             <input  (keydown.enter)="addOnList($event, 'response')" class="form-control" type="text" placeholder="Digite um padrão de resposta">
             <div class="list w-100 d-flex flex-column">
-              <p *ngFor="let item of listResponses">{{item}}</p>
+              <p *ngFor="let item of responses?.value">{{item}}</p>
             </div>
           </div>
 

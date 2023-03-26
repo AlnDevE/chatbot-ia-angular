@@ -6,7 +6,7 @@ import { SidebarModule } from '../sidebar/sidebar.module';
 import { ListTrainingComponent } from './list-training/list-training.component';
 import { CreateTrainingComponent } from './create-training/create-training.component';
 import { InfoTrainingComponent } from './info-training/info-training.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     TrainingRoutingModule,
     SidebarModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class TrainingModule { }

@@ -14,10 +14,11 @@ export class ChatiaService {
 
   sendQuestion(textInput: string){
     let params = new HttpParams().append('message', textInput);
-    return this.httpClient.get(environment.apiUrl, {params: params});
+    return this.httpClient.get(`${environment.apiUrl}response/`, {params: params});
   }
 
   postTraining(training: Training){
-    return this.httpClient.post(environment.apiUrl, training);
+    training.context = []
+    return this.httpClient.post(`${environment.apiUrl}train/`, training);
   }
 }
