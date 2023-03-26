@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs';
 import { ChatiaService } from 'src/app/service/chatia.service';
@@ -9,6 +9,9 @@ import { ChatiaService } from 'src/app/service/chatia.service';
   styleUrls: ['./create-training.component.scss']
 })
 export class CreateTrainingComponent implements OnInit {
+
+  @ViewChild('qInpt') questionsInput!: ElementRef;
+  @ViewChild('rInpt') responsesInput!: ElementRef;
 
   showInputQuestion: boolean = true;
   showInputResponse: boolean = true;
@@ -58,4 +61,8 @@ export class CreateTrainingComponent implements OnInit {
     return this.form.controls['responses'] as FormArray;
   }
 
+  clearInputs(){
+    this.questionsInput.nativeElement.value = '';
+    this.responsesInput.nativeElement.value = '';
+  }
 }
