@@ -2,7 +2,7 @@
 
 > Esse projeto foi desenvolvido utilizando angular. Para o funcionamento correto do projeto é necessário o download e a execução do projeto back-end que foi desenvolvido em python que tem como base IA para retornar as respostas;
 
-Link para download do projeto backend: https://github.com/AlnDevE/chatbot-ia
+Link para download do projeto backend: https://github.com/AlnDevE/chatbot-ia-api
 
 ## ⚙️ Funcionalidades
 
