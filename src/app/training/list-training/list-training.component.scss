@@ -1,0 +1,21 @@
+.iptcont{
+  color: white;
+}
+
+.table{
+  margin-left: 10vh;
+}
+
+:host ::ng-deep .p-datatable-wrapper{
+  padding: 0;
+  background-color: transparent;
+}
+
+:host ::ng-deep .p-datatable .p-datatable-thead > tr > th{
+  background-color:  hsla(0, 0%, 80%, 0.05);
+  color: white;
+}
+
+:host ::ng-deep .p-datatable .p-paginator-bottom{
+  background-color:  hsla(0, 0%, 80%, 0.05);
+}

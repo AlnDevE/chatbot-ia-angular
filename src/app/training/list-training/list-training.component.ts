@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListTrainingComponent implements OnInit {
 
+  allTrainings: any[] = [];
+
   constructor() { }
 
   ngOnInit(): void {

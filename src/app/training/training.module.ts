@@ -8,7 +8,7 @@ import { CreateTrainingComponent } from './create-training/create-training.compo
 import { InfoTrainingComponent } from './info-training/info-training.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MessagesModule } from 'primeng/messages';
-
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { MessagesModule } from 'primeng/messages';
     SidebarModule,
     FormsModule,
     ReactiveFormsModule,
-    MessagesModule
+    MessagesModule,
+    TableModule
   ]
 })
 export class TrainingModule { }

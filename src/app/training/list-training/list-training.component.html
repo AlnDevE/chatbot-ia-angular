@@ -1,1 +1,31 @@
-<p>list-training works!</p>
+<div class="w-100 d-flex flex-row">
+  <div class="col-9 iptcont">
+    <div class="w-100 d-flex flex-row justify-content-start">
+      <h3 class="p-5">Perguntas cadastradas</h3>
+    </div>
+    <div class="table">
+      <p-table
+        [value]="allTrainings"
+        [tableStyle]="{ 'min-width': '70vh;' }"
+        [paginator]="true"
+        [responsive]="true"
+        [rows]="5"
+        >
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Tag</th>
+                <th>Padrões Perguntas</th>
+                <th>Padrões Respostas</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-training>
+            <tr>
+                <td>{{ training.tag }}</td>
+                <td>{{ training.patterns }}</td>
+                <td>{{ training.responses }}</td>
+            </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</div>
