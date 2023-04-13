@@ -25,4 +25,8 @@ export class ListTrainingComponent implements OnInit {
       next: (allTrainings: any) => this.allTrainings = allTrainings
     })
   }
+
+  onDelete(trainingId: number | string){
+    console.log(trainingId);
+  }
 }

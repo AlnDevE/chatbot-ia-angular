@@ -22,6 +22,14 @@ export class ChatiaService {
     return this.httpClient.post(`${environment.apiUrl}train/`, training);
   }
 
+  deleteTrainig(trainingId: number | string){
+    return this.httpClient.delete(`${environment.apiUrl}trainings/${trainingId}`);
+  }
+
+  putTrainig(training: Training){
+    return this.httpClient.put(`${environment.apiUrl}trainings/${training.id}`, training);
+  }
+
   getTraining(){
     return this.httpClient.get(`${environment.apiUrl}trainings/`);
   }
