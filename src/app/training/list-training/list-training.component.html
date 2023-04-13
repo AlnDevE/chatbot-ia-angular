@@ -5,17 +5,27 @@
     </div>
     <div class="table">
       <p-table
+        #table
         [value]="allTrainings"
-        [tableStyle]="{ 'min-width': '70vh;' }"
+        [tableStyle]="{ 'min-width': '70vh;', 'max-height': '70vh;' }"
         [paginator]="true"
         [responsive]="true"
-        [rows]="5"
+        [rows]="2"
+        [globalFilterFields]="globalFilters"
         >
+        <ng-template pTemplate="caption">
+          <div class="d-flex justify-content-end">
+              <span >
+                  <input class="form-control" type="text" (input)="table.filterGlobal($any($event.target).value, 'contains')" placeholder="Pesquisa" />
+              </span>
+          </div>
+        </ng-template>
         <ng-template pTemplate="header">
             <tr>
                 <th>Tag</th>
                 <th>Padrões Perguntas</th>
                 <th>Padrões Respostas</th>
+                <th>Ações</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-training>
@@ -23,6 +33,11 @@
                 <td>{{ training.tag }}</td>
                 <td>{{ training.patterns }}</td>
                 <td>{{ training.responses }}</td>
+                <td>
+                  <button class="btn">
+                    <img src="../../../assets/excluir.png" alt="Lixeira" width="40">
+                  </button>
+                </td>
             </tr>
         </ng-template>
       </p-table>

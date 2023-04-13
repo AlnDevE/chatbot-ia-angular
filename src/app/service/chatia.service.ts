@@ -21,4 +21,8 @@ export class ChatiaService {
     training.context = []
     return this.httpClient.post(`${environment.apiUrl}train/`, training);
   }
+
+  getTraining(){
+    return this.httpClient.get(`${environment.apiUrl}trainings/`);
+  }
 }

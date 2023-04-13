@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { first } from 'rxjs';
+import { ChatiaService } from 'src/app/service/chatia.service';
 
 @Component({
   selector: 'app-list-training',
@@ -8,10 +10,19 @@ import { Component, OnInit } from '@angular/core';
 export class ListTrainingComponent implements OnInit {
 
   allTrainings: any[] = [];
+  globalFilters: string[] = ['tag','patterns','responses']
 
-  constructor() { }
+  constructor(private chatiaService: ChatiaService) { }
 
   ngOnInit(): void {
+    this.getTraining();
   }
 
+  getTraining(){
+    this.chatiaService.getTraining().pipe(
+      first()
+    ).subscribe({
+      next: (allTrainings: any) => this.allTrainings = allTrainings
+    })
+  }
 }
