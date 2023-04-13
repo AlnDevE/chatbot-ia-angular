@@ -18,8 +18,7 @@ export class ChatiaService {
   }
 
   postTraining(training: Training){
-    training.context = []
-    return this.httpClient.post(`${environment.apiUrl}trainings/`, training);
+    return this.httpClient.post(`${environment.apiUrl}trainings/`, [training]);
   }
 
   deleteTrainig(trainingId: number){
