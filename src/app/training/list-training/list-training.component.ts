@@ -26,7 +26,11 @@ export class ListTrainingComponent implements OnInit {
     })
   }
 
-  onDelete(trainingId: number | string){
-    console.log(trainingId);
+  onDelete(trainingId: number){
+    this.chatiaService.deleteTrainig(trainingId).pipe(
+      first()
+    ).subscribe({
+      next: () => location.reload()
+    })
   }
 }
